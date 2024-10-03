@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário de Inovação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow-y: auto;
+            height: 90vh;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Questionário de Inovação</h2>
+
+    <!-- Seção 1: Informações Gerais -->
+    <div class="section active" id="section1">
+        <h3>Informações Gerais</h3>
+        <label for="nome">Nome da Organização:</label>
+        <input type="text" id="nome" name="nome"><br><br>
+
+        <label for="setor">Setor de Atuação:</label><br>
+        <select id="setor" name="setor">
+            <option value="Indústria">Indústria</option>
+            <option value="Serviços">Serviços</option>
+            <option value="Tecnologia">Tecnologia</option>
+            <option value="Varejo">Varejo</option>
+            <option value="Outros">Outros</option>
+        </select><br><br>
+
+        <label for="funcionarios">Número de Funcionários:</label><br>
+        <select id="funcionarios" name="funcionarios">
+            <option value="1-50">1-50</option>
+            <option value="51-200">51-200</option>
+            <option value="201-500">201-500</option>
+            <option value="500+">Mais de 500</option>
+        </select><br><br>
+
+        <label for="cargo">Cargo do Respondente:</label><br>
+        <select id="cargo" name="cargo">
+            <option value="Diretor">Diretor(a)</option>
+            <option value="Gerente">Gerente</option>
+            <option value="Coordenador">Coordenador(a)</option>
+            <option value="Outros">Outros</option>
+        </select><br><br>
+    </div>
+
+    <!-- Seção 2: Enfoques de Inovação -->
+    <div class="section" id="section2">
+        <h3>Enfoques de Inovação</h3>
+        <label>Como você descreveria a abordagem da sua organização em relação à inovação? (Selecione todas que se aplicam)</label><br>
+        <input type="checkbox" id="produto" name="enfoque" value="Inovação de Produto">
+        <label for="produto">Inovação de Produto</label><br>
+
+        <input type="checkbox" id="processo" name="enfoque" value="Inovação de Processo">
+        <label for="processo">Inovação de Processo</label><br>
+
+        <input type="checkbox" id="organizacional" name="enfoque" value="Inovação Organizacional">
+        <label for="organizacional">Inovação Organizacional</label><br>
+
+        <input type="checkbox" id="marketing" name="enfoque" value="Inovação de Marketing">
+        <label for="marketing">Inovação de Marketing</label><br>
+
+        <input type="checkbox" id="tecnologica" name="enfoque" value="Inovação Tecnológica">
+        <label for="tecnologica">Inovação Tecnológica</label><br>
+
+        <input type="checkbox" id="aberta" name="enfoque" value="Inovação Aberta">
+        <label for="aberta">Inovação Aberta</label><br><br>
+
+        <label>Com que frequência a sua organização implementa novas iniciativas de inovação?</label><br>
+        <select id="frequencia" name="frequencia">
+            <option value="Mensalmente">Mensalmente</option>
+            <option value="Trimestralmente">Trimestralmente</option>
+            <option value="Anualmente">Anualmente</option>
+            <option value="Quando necessário">Quando necessário</option>
+        </select><br><br>
+
+        <label>Qual é o principal foco das iniciativas de inovação na sua organização?</label><br>
+        <select id="foco" name="foco">
+            <option value="Redução de custos">Redução de custos</option>
+            <option value="Melhoria da qualidade">Melhoria da qualidade</option>
+            <option value="Expansão de mercado">Expansão de mercado</option>
+            <option value="Desenvolvimento de novos produtos/serviços">Desenvolvimento de novos produtos/serviços</option>
+            <option value="Melhoria da experiência do cliente">Melhoria da experiência do cliente</option>
+            <option value="Automação e eficiência operacional">Automação e eficiência operacional</option>
+            <option value="Sustentabilidade">Sustentabilidade</option>
+        </select><br><br>
+    </div>
+
+    <!-- Seção 3: Processo de Inovação -->
+    <div class="section" id="section3">
+        <h3>Processo de Inovação</h3>
+        <label>Como as ideias de inovação são geradas na sua organização? (Selecione todas que se aplicam)</label><br>
+        <input type="checkbox" id="interno" name="ideia" value="Internamente">
+        <label for="interno">Internamente (pelos colaboradores)</label><br>
+
+        <input type="checkbox" id="consultoria" name="ideia" value="Consultorias externas">
+        <label for="consultoria">Consultorias externas</label><br>
+
+        <input type="checkbox" id="parcerias" name="ideia" value="Parcerias com startups">
+        <label for="parcerias">Parcerias com startups</label><br>
+
+        <input type="checkbox" id="clientes" name="ideia" value="Sugestões de clientes">
+        <label for="clientes">Sugestões de clientes</label><br>
+
+        <input type="checkbox" id="concorrencia" name="ideia" value="Competição com concorrentes">
+        <label for="concorrencia">Competição com concorrentes</label><br>
+
+        <input type="checkbox" id="pesquisa" name="ideia" value="Pesquisa & Desenvolvimento">
+        <label for="pesquisa">Pesquisa & Desenvolvimento (P&D)</label><br><br>
+
+        <label>Como a sua organização financia iniciativas de inovação?</label><br>
+        <select id="financiamento" name="financiamento">
+            <option value="Internamente">Internamente (recursos próprios)</option>
+            <option value="Investidores externos">Investidores externos</option>
+            <option value="Subsídios">Subsídios/governos</option>
+            <option value="Parcerias">Parcerias com outras organizações</option>
+        </select><br><br>
+
+        <label>Qual é o envolvimento dos colaboradores nos projetos de inovação?</label><br>
+        <select id="envolvimento" name="envolvimento">
+            <option value="Baixo">Baixo (somente gerentes/diretores envolvidos)</option>
+            <option value="Moderado">Moderado (colaboradores de algumas áreas)</option>
+            <option value="Alto">Alto (colaboradores de toda a organização)</option>
+        </select><br><br>
+
+        <label>Quais ferramentas/metodologias sua organização utiliza para gerenciar a inovação? (Selecione todas que se aplicam)</label><br>
+        <input type="checkbox" id="design" name="metodologia" value="Design Thinking">
+        <label for="design">Design Thinking</label><br>
+
+        <input type="checkbox" id="scrum" name="metodologia" value="Scrum ou metodologias ágeis">
+        <label for="scrum">Scrum ou metodologias ágeis</label><br>
+
+        <input type="checkbox" id="lean" name="metodologia" value="Lean Startup">
+        <label for="lean">Lean Startup</label><br>
+
+        <input type="checkbox" id="canvas" name="metodologia" value="Business Model Canvas">
+        <label for="canvas">Business Model Canvas</label><br>
+
+        <input type="checkbox" id="pmo" name="metodologia" value="PMO (Escritório de Projetos)">
+        <label for="pmo">PMO (Escritório de Projetos)</label><br><br>
+    </div>
+
+    <!-- Seção 4: Expectativas e Retornos -->
+    <div class="section" id="section4">
+        <h3>Expectativas e Retornos</h3>
+        <label>Qual é o tempo médio esperado para obter retorno sobre os investimentos em inovação?</label><br>
+        <select id="retorno" name="retorno">
+            <option value="Menos de 6 meses">Menos de 6 meses</option>
+            <option value="6 meses a 1 ano">6 meses a 1 ano</option>
+            <option value="1 a 3 anos">1 a 3 anos</option>
+            <option value="Mais de 3 anos">Mais de 3 anos</option>
+        </select><br><br>
+
+        <label>Quais são os principais indicadores usados para medir o sucesso das iniciativas de inovação? (Selecione todas que se aplicam)</label><br>
+        <input type="checkbox" id="receita" name="indicador" value="Aumento de receita">
+        <label for="receita">Aumento de receita</label><br>
+
+        <input type="checkbox" id="custos" name="indicador" value="Redução de custos">
+        <label for="custos">Redução de custos</label><br>
+
+        <input type="checkbox" id="satisfacao" name="indicador" value="Satisfação do cliente">
+        <label for="satisfacao">Satisfação do cliente</label><br>
+
+        <input type="checkbox" id="produtividade" name="indicador" value="Aumento de produtividade">
+        <label for="produtividade">Aumento de produtividade</label><br><br>
+    </div>
+
+    <div class="buttons">
+        <button id="prevBtn" onclick="nextPrev(-1)" disabled>Anterior</button>
+        <button id="nextBtn" onclick="nextPrev(1)">Próximo</button>
+    </div>
+</div>
+
+<script>
+    let currentSection = 0;
+    showSection(currentSection);
+
+    function showSection(n) {
+        const sections = document.querySelectorAll(".section");
+        sections[n].classList.add("active");
+
+        if (n === 0) {
+            document.getElementById("prevBtn").disabled = true;
+        } else {
+            document.getElementById("prevBtn").disabled = false;
+        }
+
+        if (n === sections.length - 1) {
+            document.getElementById("nextBtn").innerText = "Enviar";
+        } else {
+            document.getElementById("nextBtn").innerText = "Próximo";
+        }
+    }
+
+    function nextPrev(n) {
+        const sections = document.querySelectorAll(".section");
+        sections[currentSection].classList.remove("active");
+
+        currentSection += n;
+
+        if (currentSection >= sections.length) {
+            alert("Questionário enviado!");
+            // Aqui você pode adicionar o código para processar as respostas ou enviar via formulário.
+            return false;
+        }
+
+        showSection(currentSection);
+    }
+</script>
+
+</body>
+</html>
